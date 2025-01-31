@@ -1,0 +1,32 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 1rem;
+  background-color: rgb(40, 40, 50);
+}
+#story-bar-container {
+  display: flex;
+  gap: 1rem;
+  width: 90%;
+  margin: 0 auto;
+  background-color: rgba(128, 128, 128, 0.405);
+  border-radius: 5px;
+  padding: 1rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on mobile */
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+.add-story-btn {
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  height: 3rem;
+  width: 3rem;
+  border-radius: 100%;
+  background-color: whitesmoke;
+}
