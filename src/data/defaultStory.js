@@ -1,1 +1,1 @@
-export let defaultStory = [{}, {}, {}];
+

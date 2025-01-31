@@ -1,5 +1,6 @@
 * {
   box-sizing: border-box;
+  font-family: tahoma;
 }
 body {
   margin: 0;
@@ -12,14 +13,15 @@ body {
   width: 90%;
   margin: 0 auto;
   background-color: rgba(128, 128, 128, 0.405);
-  border-radius: 5px;
-  padding: 1rem;
+  border-radius: 15px;
+  padding: .5rem 1rem;
   overflow-x: auto;
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch; /* Smooth scrolling on mobile */
   &::-webkit-scrollbar {
     display: none;
   }
+  
 }
 .add-story-btn {
   flex-shrink: 0;
@@ -29,4 +31,7 @@ body {
   width: 3rem;
   border-radius: 100%;
   background-color: whitesmoke;
+  &:hover{
+    background-color: rgb(225, 225, 225);
+  }
 }
