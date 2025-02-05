@@ -6,6 +6,8 @@ body {
   margin: 0;
   padding: 1rem;
   background-color: rgb(40, 40, 50);
+  position: relative;
+  height: 100vh;
 }
 #story-bar-container {
   display: flex;
@@ -14,14 +16,21 @@ body {
   margin: 0 auto;
   background-color: rgba(128, 128, 128, 0.405);
   border-radius: 15px;
-  padding: .5rem 1rem;
+  padding: 0.5rem 1rem;
+  /*scrolling feature */
   overflow-x: auto;
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch; /* Smooth scrolling on mobile */
   &::-webkit-scrollbar {
     display: none;
   }
-  
+}
+.add-story-container,
+.story-container {
+  display: flex;
+  align-items: center;
+  gap: 0.1rem;
+  flex-direction: column;
 }
 .add-story-btn {
   flex-shrink: 0;
@@ -31,7 +40,70 @@ body {
   width: 3rem;
   border-radius: 100%;
   background-color: whitesmoke;
-  &:hover{
+  &:hover {
     background-color: rgb(225, 225, 225);
   }
+}
+.story {
+  flex-shrink: 0;
+  height: 3rem;
+  width: 3rem;
+  border-radius: 100%;
+  border: 1px solid;
+}
+.story-viewer-background {
+  background-color: rgba(0, 0, 0, 0.9);
+  position: absolute;
+  inset: 0;
+}
+.close-viewer-btn {
+  background-color: transparent;
+  border:none;
+  position: absolute;
+  top:1rem;
+  right:3rem;
+  font-size: 1.75em;
+  color:grey;
+  transition: color .3s;
+  &:hover{
+    color:white;
+  }
+}
+.story-viewer-container {
+  position: relative;
+  /* border: 1px solid red; */
+  height:100%;
+  width:85%;
+  margin:0 auto;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+}
+.progress-bar-container{
+  z-index:100;
+  position: absolute;
+  top:0;
+  left: 0;
+  right:0;
+  display: flex;
+  gap: .3rem;
+  padding:.5rem;
+}
+.progress-bar{
+  appearance: none;
+  width:100%;
+  height: .2rem;
+  
+  &::-webkit-progress-bar{
+    border-radius:45px;
+    background-color: rgba(150,150,150);
+  }
+  &::-webkit-progress-value{
+    border-radius: 25px;
+    background-color: rgba(255,255,255);
+  }
+}
+.story-viewer{
+  /* border:1px solid red; */
+  height: 100%;
 }
