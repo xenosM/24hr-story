@@ -1,4 +1,6 @@
 import { useState, useEffect } from "react";
+import PropTypes from "prop-types";
+
 function ProgressBar({  index, requiredIndex }) {
   const [progressValue, setProgressValue] = useState(0);
   //*FUNCTION
@@ -32,5 +34,9 @@ function ProgressBar({  index, requiredIndex }) {
       max="3000"
     ></progress>
   );
+}
+ProgressBar.propTypes  = {
+    index: PropTypes.number,
+    requiredIndex: PropTypes.number
 }
 export default ProgressBar;

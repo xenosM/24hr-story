@@ -12,7 +12,7 @@ function AddStoryBtn({ setStoryArray }) {
       const file = e.target.files[0];
       if (!file) return;
       //5MB
-      if (file.size > 5_000_000) {
+      if (file.size > 5000000) {
         alert("File too large!");
         return;
       }

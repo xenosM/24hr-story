@@ -1,6 +1,6 @@
 import { getTimeSince } from "../Utils/utils";
 import { useContext } from "react";
-import { showViewerContext } from "../App";
+import { showViewerContext } from "../Context/ContextProvider";
 
 
 function Story({ dataImage, timeStamp,id }) {

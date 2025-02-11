@@ -1,6 +1,6 @@
 import ProgressBar from "./ProgressBar";
 import { useContext, useEffect, useState } from "react";
-import { showViewerContext } from "../App";
+import { showViewerContext } from "../Context/ContextProvider";
 import { getFromLocal } from "../Utils/utils";
 import { useSwipeable } from "react-swipeable";
 
@@ -9,7 +9,7 @@ function StoryViewer({ id }) {
   const { setShowViewer } = useContext(showViewerContext);
   //*VARIABLE
   const storyArray = getFromLocal();
-  let interval
+  let interval;
   //*STATE
   const [storyIndex, setStoryIndex] = useState(
     storyArray.findIndex((story) => story.id == id)
@@ -20,7 +20,7 @@ function StoryViewer({ id }) {
   }
   //*EFFECT
   useEffect(() => {
-     interval = setInterval(() => {
+    interval = setInterval(() => {
       setStoryIndex((i) => ++i);
     }, 3000);
     return () => {
@@ -32,13 +32,15 @@ function StoryViewer({ id }) {
     setStoryIndex((i) => ++i);
   }
   function previousStory() {
-
     storyIndex > 0 && setStoryIndex((i) => --i);
   }
   //*SWIPE HANDLER
   const swipeHandler = useSwipeable({
     onSwipedRight: nextStory,
     onSwipedLeft: previousStory,
+    onSwipedDown: () => {
+      setShowViewer(false);
+    },
     trackMouse: true,
   });
 

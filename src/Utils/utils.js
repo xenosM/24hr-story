@@ -45,6 +45,7 @@ export function imageReSizer(data) {
   const image = new Image();
   image.src = data;
   if (image.width > 1080 || image.height > 1920) {
+    console.log("trigger resizing")
     const canvas = document.createElement("canvas");
     const ctx = canvas.getContext("2d");
 
@@ -53,7 +54,6 @@ export function imageReSizer(data) {
 
     canvas.width = image.width * aspectRatio;
     canvas.height = image.height * aspectRatio;
-
     ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
     //compressed to 0.8 to reduce file size without significant loss of quality
     return canvas.toDataURL("image/jpeg", 0.8);
